@@ -1,30 +1,24 @@
-# kay-banjo-opus-48
+# Audio Data Collection
 
-Opus 48 kbps preview MP3s for the **FlameStudios.Kay5StringBanjo** sample library.
+Audio files in Opus 48k format with metadata index.
 
-## About
+## Contents
 
-This repo holds **48 kbps Opus previews** for fast streaming in the web DAW.
-Opus at 48k delivers near-CD quality at ~35% the size of MP3 128k.
+- `index.json` — metadata index
+- `*.opus` — audio files
+- `validate.py` — validation script
 
-- **Files**: 86 Opus previews
-- **Bitrate**: 48 kbps VBR
-- **Container**: Ogg Opus (.opus)
-- **Source**: [`zulfikarbarbora-outl/FlameStudios.Kay5StringBanjo`](https://github.com/zulfikarbarbora-outl/FlameStudios.Kay5StringBanjo)
-- **Branch**: `master`
+## Usage
 
-## URL pattern
+```python
+import json
 
-```
-https://raw.githubusercontent.com/zulfikarbarbora-outl/kay-banjo-opus-48/master/<filename>.opus
-```
+with open('index.json') as f:
+    index = json.load(f)
 
-## Verification
-
-```bash
-python3 verify.py
+print(f"Files: {index['fileCount']}")
 ```
 
-## Index
+## License
 
-See [`index.json`](./index.json) for the full file catalog with parsed note/velocity/round-robin info.
+CC0-1.0 / Public Domain
